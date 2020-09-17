@@ -1,0 +1,107 @@
+/* 
+COLORS
+
+Primary: #EB2F64
+Primary-light: #FF3366
+Primary-dark: #BA265D
+
+Grey-light-1: #FAF9F9
+Grey-light-2: #F4F2F2
+Grey-light-3: #F0FEEE
+Grey-light-4: #CCC
+
+Grey-dark-1: #333
+Grey-dark-2: #777
+Grey-dark-3: #999
+
+*/
+
+//So this is the root pseudo class and this is essentially like the same thing as the HTML selector but with a higher specificity. 
+//By putting all of our variables in here, they will be accessible throughout the entire document, because that's what the root 
+//of the document is. It's like the global parent element. And therefore all the variables we're going to declare here
+//will be available to all the child elements. And this is how we actually declare custom properties.
+
+//CSS Custom Variables
+
+:root {
+    --color-primary: #EB2F64;   //CSS Custom Properties or CSS Variables
+    --color-primary-light: #FF3366;
+    --color-primary-lighter: #FFE6EA;
+    --color-primary-lightest: #FFEBEE;
+    --color-primary-dark: #BA265D;
+
+    --color-grey-light-1: #FAF9F9;
+	--color-grey-light-2: #F4F2F2;
+	--color-grey-light-3: #F0FEEE;
+	--color-grey-light-4: #CCC;
+
+	--color-grey-dark-1: #333;
+	--color-grey-dark-2: #777;
+	--color-grey-dark-3: #999;
+
+	--color-white: #fff;
+
+	--shadow-dark: 0 2rem 6rem rgba(0,0,0, 0.3);
+	--shadow-light: 0 2rem 5rem rgba(0,0,0,0.05);
+
+	--line: 1px solid var(--color-grey-light-2);;
+}
+
+//SASS Variables
+
+$bp-largest: 75em; //1200px => 1200/16 = 75em
+$bp-large: 68.75em; //1100px => 1100/16 = 68.75em
+$bp-medium: 56.25em;  //900px => 900/16 = 56.25em
+$bp-small: 37.5em;  //600px => 600/16 = 37.5em
+$bp-smallest: 31.25em; //500px => 500/16 = 31.25em
+$bp-xsmall: 25em;  //400px => 400/16 = 25em
+$bp-2xsmall: 23.4375em; //375px => 375/16 = 23.4375em
+$bp-3xsmall: 21.875em;  //350px => 350/16 = 21.875em
+
+
+
+* {
+	margin: 0;
+	padding: 0;  
+	//why you are not applying margin: 0 & padding: 0 to the *::before and *::after classes all together in the first selector?
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;  
+	//Because it weighs down the performance. The universal selector is already pretty weighty by itself, but also using it on all pseudo-elements is kind of overkill.
+	//I think the reasoning is simply that we do not heavily use pseudo-elements in the Trillo project, and so there was no need to weigh down the browser with those additional selections.
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; //1rem = 10px;  10px/16px = 62.5%
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 50%; //1rem = 8px, 8/16 = 50%
+	}
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	line-height: 1.6;
+	color: var(--color-grey-dark-2);
+	background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+
+	@media only screen and (max-width: $bp-largest) {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-evenly;  
+    }    	
+}
+
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}

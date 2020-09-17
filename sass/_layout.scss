@@ -1,0 +1,99 @@
+.container {
+  max-width: 120rem; //1200px
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  //min-height: 100vh;
+
+  @media only screen and (max-width: $bp-largest) {   //max-width because we are using desktop-first strategy
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    //min-height: 100vh;
+  } 
+}
+
+.header {
+  font-size: 1.4rem;	
+  height: 7rem;
+  background-color: var(--color-white);
+  border-bottom: var(--line);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    height: 11rem;
+  }
+}
+
+.content {
+  display: flex;
+    
+  @media only screen and (max-width: $bp-medium) {   //max-width because we are using desktop-first strategy
+    flex-direction: column;
+  } 
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+
+  flex: 0 0 18%;  //No flex-grow and flex-shrink
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-view {
+  background-color: var(--color-white);
+  //height: 80rem;
+  flex: 1;
+}
+
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {   //max-width because we are using desktop-first strategy
+    padding: 3rem;
+  } 
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+}
+
+.description {
+  background-color: var(--color-white);
+  box-shadow: var(----shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+
+  @media only screen and (max-width: $bp-medium) {   //max-width because we are using desktop-first strategy
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.user-reviews {
+  //background-color: yellowgreen;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
