@@ -1,4 +1,5 @@
-# Trillo Project
+# Trillo Project - Flexbox Layout
 
+A fully responsive single-page static website developed to conceptualize and understand the CSS Flexbox page layout with advanced CSS3 features like Media Queries, Transforms, and Animations.
 
-A single page responsive website designed to demonstrate CSS's Flexbox power.
+Used SASS preprocessor with features like variables, nesting rules, mixins, modules and inheritance for more readable and maintainable CSS structure.
